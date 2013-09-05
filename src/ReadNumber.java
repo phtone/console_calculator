@@ -19,5 +19,10 @@ public class ReadNumber {
         return one - two;
     }
 
+    int multiply() {
+
+        return one * two;
+
+    }
 
 }

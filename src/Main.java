@@ -31,10 +31,14 @@ public class Main {
         ReadNumber number = new ReadNumber(numberOne, numberTwo);
 
         switch (v) {
-            case '+': System.out.println("Ответ: " + number.addition());
+            case '+':
+                System.out.println("Ответ: " + number.addition());
                 break;
-            case '-': System.out.println("Ответ: " + number.subtract());
+            case '-':
+                System.out.println("Ответ: " + number.subtract());
                 break;
+            case '*':
+                System.out.println("Ответ: " + number.multiply());
         }
     }
 
