@@ -1,26 +1,24 @@
 import java.util.Scanner;
 
 public class ReadNumber {
-    int one;
-    int two;
+    double one;
+    double two;
 
-    public ReadNumber(int numberOne, int numberTwo) {
+    public ReadNumber(double numberOne, Double numberTwo) {
         one = numberOne;
         two = numberTwo;
     }
 
-    int addition() {
-
+    double addition() {
         return one + two;
 
     }
 
-    int subtract() {
+    double subtract() {
         return one - two;
     }
 
-    int multiply() {
-
+    double multiply() {
         return one * two;
 
     }
