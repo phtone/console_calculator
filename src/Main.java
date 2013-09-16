@@ -18,32 +18,10 @@ public class Main {
         sign = tokenizer.nextToken().charAt(0);
         numberTwo = Double.parseDouble(tokenizer.nextToken());
 
-//        System.out.println("Введите первое число ");
-//
-//        numberOne = read.nextInt();
-//
-//        System.out.println("Вы ввели число: " + numberOne);
-//
-//        System.out.println("Введите знак операции ");
-//
-//        sign = read.next();
-//
-//        char v = sign.charAt(0); //переводим String в char
-//
-//        System.out.println("Вы ввели знак: " + sign);
-//
-//        System.out.println("Введите второе число");
-//
-//        numberTwo = read.nextInt();
-//
-//        System.out.println("Вы ввели число: " + numberTwo);
-
-//        ReadNumber number = new ReadNumber(numberOne, numberTwo);
-
         switch (sign) {
             case '+':
                 result = numberOne + numberTwo;
-//                System.out.println("Ответ: " + number.addition());
+//               System.out.println("Ответ: " + number.addition());
                 break;
             case '-':
                 result = numberOne - numberTwo;
