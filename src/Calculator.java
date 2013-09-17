@@ -62,35 +62,34 @@ public class Calculator {
 
     }
 
-    public Node string_to_tree(String input) {
-         //стек
+    //передаем строку
+    public void basic(String input) {
+
+        //стек
         LinkedList<Character> stack = new LinkedList<Character>();
+
         //выходная строка
         LinkedList<Character> output = new LinkedList<Character>();
-        for (int i = 0; i < input.length(); i++) {
 
+        for (int i = 0; i < input.length(); i++) {
+            //charAt возвращает значение по указаному индексу
             char current = input.charAt(i);
 
-            if (current == '*' || current == '/' || current == '+' || current == '-') {
+            //if (current == '*' || current == '/' || current == '+' || current == '-') {
+            if (current == '(') {
+                stack.add(current);
 
                 if (stack.isEmpty()) {
                     stack.add(current);
+
+                    if (current == ')') {
+                        output = stack;
+                        while (stack.getLast() != '(') ;
+                        lastElement(stack, output);
+                    }
                 }
-
-            } if (current == '(') {
-                stack.add(current);
-
-             //пока стек не (
-            } else if (current == ')') {
-                output = stack;
-                while (stack.getLast() != '(');
-                lastElement(stack, output);
-
             }
-
         }
-
-
     }
 }
 
