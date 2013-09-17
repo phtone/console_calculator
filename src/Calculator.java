@@ -56,10 +56,17 @@ public class Calculator {
         }
     }
 
-    public Node string_to_tree(String input) {
+    public void lastElement(LinkedList stack, LinkedList output) {
+        stack.removeLast();
+        output.add(output.removeLast());
 
+    }
+
+    public Node string_to_tree(String input) {
+         //стек
         LinkedList<Character> stack = new LinkedList<Character>();
-        LinkedList<Character> output;
+        //выходная строка
+        LinkedList<Character> output = new LinkedList<Character>();
         for (int i = 0; i < input.length(); i++) {
 
             char current = input.charAt(i);
@@ -77,8 +84,9 @@ public class Calculator {
             } else if (current == ')') {
                 output = stack;
                 while (stack.getLast() != '(');
+                lastElement(stack, output);
 
-            } else ()
+            }
 
         }
 
