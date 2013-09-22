@@ -61,7 +61,7 @@ public class Calculator {
 //            Если текущий символ - открывающая скобка, то помещаем ее в стек
             if (current == '(') {
                 stack.add(current);
-
+//                доделать
                 if(valueOff(current)) {
                     while(stack.isEmpty() < priority(output.getLast()));
 
