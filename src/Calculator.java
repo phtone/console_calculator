@@ -62,23 +62,26 @@ public class Calculator {
             if (current == '(') {
                 stack.add(current);
 //                доделать
-                if(valueOff(current)) {
-                    while(stack.isEmpty() < priority(output.getLast()));
+//                если current одно из значений, пока стек пустой и приоритет последнего элемента меньше приоритет
+//                текущего символа
+                if (valueOff(current)) {
+                    while (stack.isEmpty() && priority(output.getLast()) < priority(current)) ;
+                    stack.add(current);
 
                 }
 
 //                if (stack.isEmpty()) {
 //                    stack.add(current);
 
-                    if (current == ')') {
-                        output = stack;
-                        while (stack.getLast() != '(') ;
-                        lastElement(stack, output);
-                    }
+                if (current == ')') {
+                    output = stack;
+                    while (stack.getLast() != '(') ;
+                    lastElement(stack, output);
                 }
             }
         }
     }
+}
 }
 
 // убрать из одного списка и засунуть во второй
