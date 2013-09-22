@@ -2,15 +2,20 @@ import java.util.LinkedList;
 
 public class Calculator {
 
-    public static void main(String[]args){
+    public static void main(String[] args) {
 
-        String a="1+2(4-2)";
-
-        basic(a);
+//        String a="1+2(4-2)";
+        LinkedList<Character> test1 = new LinkedList<Character>();
+        test1.add('a');
+        test1.add('б');
+        LinkedList<Character> test2 = new LinkedList<Character>();
+        test2.add('в');
+        lastElement(test1, test2);
+//        basic(a);
     }
 
 
-    int priority(char operation) {
+    static int priority(char operation) {
 
         switch (operation) {
             case '*':
@@ -29,30 +34,41 @@ public class Calculator {
         return 0;
     }
 
-    public static void lastElement(LinkedList s, LinkedList o) {
-        s.removeLast();
-        o.add(s);
+    public static void lastElement(LinkedList<Character> s, LinkedList<Character> o) {
+        Character e = s.removeLast();
+        o.add(e);
+    }
+
+    public static boolean valueOff(char sym) {
+
+        return sym == '+' || sym == '-' || sym == '*' || sym == '/' || sym == '%' || sym == '(';
 
     }
 
-    //передаем строку
+    //    передаем строку
     public static void basic(String input) {
 
-        //стек
+//        стек
         LinkedList<Character> stack = new LinkedList<Character>();
 
-        //выходная строка
+//        выходная строка
         LinkedList<Character> output = new LinkedList<Character>();
 
+
         for (int i = 0; i < input.length(); i++) {
-            //charAt возвращает значение по указаному индексу
+//            charAt возвращает значение по указаному индексу
             char current = input.charAt(i);
-            //Если текущий символ - открывающая скобка, то помещаем ее в стек
+//            Если текущий символ - открывающая скобка, то помещаем ее в стек
             if (current == '(') {
                 stack.add(current);
 
-                if (stack.isEmpty()) {
-                    stack.add(current);
+                if(valueOff(current)) {
+                    while(stack.isEmpty() < priority(output.getLast()));
+
+                }
+
+//                if (stack.isEmpty()) {
+//                    stack.add(current);
 
                     if (current == ')') {
                         output = stack;
@@ -67,13 +83,7 @@ public class Calculator {
 
 // убрать из одного списка и засунуть во второй
 // removeLast - Удаляет и возвращает последний элемент из этого списка.
-
-
-
-
-
-
-
+// getLast - Возвращает последний элемент в этом списке.
 
 
 //    static class Node {
